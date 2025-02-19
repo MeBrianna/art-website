@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Portfolio</title>
+        <script>
+            function changeBackground(id, color) {
+                document.getElementById(id).style["background-color"] = color
+            }
+            
+            function storeInfo() {
+                var name = document.getElementById("name_field").value
+                window.localStorage.setItem("name", name)
+                var email = document.getElementById("email_field").value
+                window.localStorage.setItem("email", email)
+                if (document.getElementById("rating3").checked) {
+                    window.localStorage.setItem("rating", "3")
+                } else if (document.getElementById("rating2").checked) {
+                    window.localStorage.setItem("rating", "2")
+                } else if (document.getElementById("rating1").checked){
+                    window.localStorage.setItem("rating", "1")
+                }
+                alert("Feedback Sent")
+            }
+        </script>
+        <style>
+            h1{
+                font-size: 40px;
+                text-align: center;
+            }
+            .links{
+                margin: 5px;
+                padding: 5px;
+                font-size: 20px;
+                background-color: rgb(190, 190, 190);
+            }
+            body{
+                color: blue;
+                background-color: bisque;
+                text-align: center;
+            }
+            .grid{
+                width: 300px;
+                height: 225px;
+                float: left;
+                margin: 25px;
+                text-align: center;
+            }
+            .art{
+                padding: 25px;
+            }
+            #whole_grid{
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                width: 1050px;
+                height: 550px;
+                margin: auto;
+            }
+            input{
+                margin: 0px 0px 20px 20px;
+            }
+            #contact{
+                position: relative;
+                top: 560px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Portfolio</h1>
+        <div>
+            <a href="index.html" class="links">Home</a>
+            <a href="about.html" class="links">About</a>
+            <a href="portfolio.html" class="links">Portfolio</a>
+            <a href="contact.html" class="links">Contact</a>
+        </div>
+        <div id="whole_grid">
+            <div class="grid">
+                <img class="art" id="a1" src="images/abstract.png" onmouseover="changeBackground('a1', 'black')" onmouseleave="changeBackground('a1', 'transparent')" width="300px">
+            </div>
+            <div class="grid">
+                <img class="art" id="a2" src="images/landscape.png" onmouseover="changeBackground('a2', 'black')" onmouseleave="changeBackground('a2', 'transparent')" width="300px">
+            </div>
+            <div class="grid">
+                <img class="art" id="a3" src="images/eye.png" onmouseover="changeBackground('a3', 'black')" onmouseleave="changeBackground('a3', 'transparent')" width="300px">
+            </div>
+            <div class="grid">
+                <img class="art" id="a4" src="images/squiggle.png" onmouseover="changeBackground('a4', 'black')" onmouseleave="changeBackground('a4', 'transparent')" width="300px">
+            </div>
+            <div class="grid">
+                <img class="art" id="a5" src="images/clouds.png" onmouseover="changeBackground('a5', 'black')" onmouseleave="changeBackground('a5', 'transparent')" width="300px">
+            </div>
+            <div class="grid">
+                <img class="art" id="a6" src="images/sunrise.png" onmouseover="changeBackground('a6', 'black')" onmouseleave="changeBackground('a6', 'transparent')" width="300px">
+            </div>
+        </div>
+        <div id="contact">
+            <h2>Rate My Website</h2>
+            <form>
+                <div class="form">
+                    <label for="name_field">Name</label>
+                    <input type="text" id="name_field">
+                </div>
+                <div class="form">
+                    <label for="email_field">Email</label>
+                    <input type="text" id="email_field">
+                </div>
+                <div class="form">
+                    <label for="rating">Feedback</label>
+                    <input type="radio" name="rating" id="rating3">Good
+                    <input type="radio" name="rating" id="rating2">Okay
+                    <input type="radio" name="rating" id="rating1">Needs Improvement
+                </div>
+                <div>
+                    <input type="submit" onclick="storeInfo()">
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

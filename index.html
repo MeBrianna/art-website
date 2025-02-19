@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <style>
+            #art{
+                width: 450px;
+                padding: 0px 20px 20px 20px;
+            }
+            .links{
+                margin: 5px;
+                padding: 5px;
+                font-size: 20px;
+                background-color: rgb(190, 190, 190);
+            }
+            body{
+                color: blue;
+                text-align: center;
+            }
+            #black{
+                background-color: black;
+                padding: 20px;
+                color: white;
+                position: absolute;
+                margin: auto;
+                right: 0;
+                left: 0;
+                width: 450px;
+            }
+            .paragraph{
+                padding-bottom: 20px;
+            }
+            #button{
+                margin-top: 20px
+            }
+            h1{
+                font-size: 40px;
+            }
+            h3{
+                font-size: 25px;
+            }
+            footer{
+                position: relative;
+                top: 150px;
+                padding-bottom: 50px;
+            }
+        </style>
+        <script>
+            function changeFontColor() {
+                if (document.getElementById("red").style["color"] === "red") {
+                    document.getElementById("red").style["color"] = "white"
+                    document.getElementById("green").style["color"] = "white"
+                    document.getElementById("yellow").style["color"] = "white"
+                } else {
+                    document.getElementById("red").style["color"] = "red"
+                    document.getElementById("green").style["color"] = "greenyellow"
+                    document.getElementById("yellow").style["color"] = "yellow"
+                }
+            }
+            
+            function changeBackground() {
+                var bg = window.localStorage.getItem("bg")
+                var body = document.getElementsByTagName("body")[0]
+                if (bg === "bisque") {
+                    body.style["background-color"] = "pink"
+                    window.localStorage.setItem("bg", "pink")
+                } else {
+                    body.style["background-color"] = "bisque"
+                    window.localStorage.setItem("bg", "bisque")
+                }
+            }
+        </script>
+    </head>
+    <body onload="changeBackground()">
+        <div>
+            <h1>Home</h1>
+        </div>
+        <div>
+            <a href="index.html" class="links">Home</a>
+            <a href="about.html" class="links">About</a>
+            <a href="portfolio.html" class="links">Portfolio</a>
+            <a href="contact.html" class="links">Contact</a>
+        </div>
+        <div>
+            <h3>Welcome to my website!</h3>
+        </div>
+        <img src="images/flower.png" id="art">
+        <div id="black">
+                <div>
+                    <p>I create art pieces like this one.</p>
+                </div>
+                <span class="paragraph">It is a painting of a</span>
+                <span class="paragraph" id="red">lonely rose</span>
+                <span class="paragraph">in a</span>
+                <span class="paragraph" id="green">field of grass</span>
+                <span class="paragraph">on a</span>
+                <span class="paragraph" id="yellow">sunny day</span>
+                <div>
+                    <input id="button" type="button" value="click me" onclick="changeFontColor()">
+                </div>
+        </div>
+        <div>
+        </div>
+        <footer>
+            <p>refresh to change the background color</p>
+            <p>Website created by Brianna Yuki</p>
+        </footer>
+    </body>
+</html>

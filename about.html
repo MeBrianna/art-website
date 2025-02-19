@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+        <style>
+            a{
+                font-size: 20px;
+                background-color: rgb(190, 190, 190);
+                padding: 5px;
+                margin: 5px;
+            }
+            .navbar{
+                width: 100px;
+                float: left;
+                position: relative;
+                top: 20px;
+                left: 20px;
+            }
+            .links{
+                height: 40px;
+            }
+            h1{
+                text-align: center;
+                color: blue;
+                font-size: 40px;
+            }
+            #portrait{
+                width: 400px;
+                padding: 20px;
+                background-color: black;
+                float: left;
+            }
+            #image{
+                margin: 0px 20px 20px 20px;
+                width: 400px;
+                float: left;
+            }
+            body{
+                background-color: bisque;
+            }
+            #text{
+                position: absolute;
+                left: 500px;
+            }
+            #main{
+                position: absolute;
+                top: 100px;
+                left: 200px;
+                width: 900px;
+                height: 500px;
+            }
+            p{
+                font-size: 20px;
+            }
+            #description{
+                display: none;
+                margin-left: 20px;
+            }
+            #biography{
+                visibility: hidden;
+            }
+            #description_button{
+                margin: 10px;
+            }
+            #biography_button{
+                margin: 10px;
+            }
+            input{
+                font-size: 20px;
+            }
+            
+        </style>
+        <script>
+            function changeDisplay() {
+                var item = document.getElementById("description")
+                var button = document.getElementById("description_button")
+                if (item.style["display"] === "block") {
+                    item.style["display"] = "none"
+                    button.value = "show description"
+                } else {
+                    item.style["display"] = "block"
+                    button.value = "hide description"
+                }
+            }
+            function changeVisibility() {
+                var item = document.getElementById("biography")
+                var button = document.getElementById("biography_button")
+                if (item.style["visibility"] === "visible") {
+                    item.style["visibility"] = "hidden"
+                    button.value = "show biography"
+                } else {
+                    item.style["visibility"] = "visible"
+                    button.value = "hide biography"
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>About Me</h1>
+        </div>
+        <div class="navbar">
+            <div class="links"><a href="index.html">Home</a></div>
+            <div class="links"><a href="about.html">About</a></div>
+            <div class="links"><a href="portfolio.html">Portfolio</a></div>
+            <div class="links"><a href="contact.html">Contact</a></div>
+        </div>
+        <div id="main">
+            <div id="image">
+                <input type="button" value="show description" id="description_button" onclick="changeDisplay()"> 
+                <p id="description">This is a portrait that I created of myself in the year 1910.</p>
+                <img src="images/portrait.png" id="portrait">
+            </div>
+            <div id="text">
+                <input type="button" value="show biography" id="biography_button" onclick="changeVisibility()"> 
+                <p id="biography">I was born in 1899 on Pluto. 
+                    As a kid I loved to draw and paint on walls.
+                    I started creating and selling art at the age of 7.
+                    I went to Cloud High School, a well renouned art school.
+                    I graduated after only a year and
+                    by age 16, I was so well known that everyone knew my name</p>
+                <p>I have been creating artwork for 99 years. 
+                I have created countless famous masterpieces. 
+                This website is a collection of my most famous works.</p></div>
+        </div>
+    </body>
+</html>
